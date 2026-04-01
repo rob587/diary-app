@@ -1,50 +1,17 @@
-# Welcome to your Expo app 👋
+Esercizio — App Diario di Viaggio
+Crea un'app con 2 tab:
+Tab Registra (index.tsx)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Un bottone "Dove sono?" che recupera le coordinate attuali e le mostra in una card (latitudine, longitudine, città tramite reverse geocoding)
+Un bottone "Scatta foto" che apre la camera e scatta una foto
+Un bottone "Salva tappa" che salva in AsyncStorage un oggetto con coordinate, foto (uri) e data/ora attuale
+Mostra un feedback visivo dopo il salvataggio — tipo un testo "Tappa salvata!" che appare per 2 secondi
 
-## Get started
+Tab Tappe (tappe.tsx)
 
-1. Install dependencies
+Al montaggio legge tutte le tappe salvate in AsyncStorage
+Le mostra in una FlatList — ogni card mostra la foto, la città, le coordinate e la data/ora
+Un bottone "Elimina" su ogni card che rimuove quella tappa da AsyncStorage e aggiorna la lista
+Se non ci sono tappe mostra "Nessuna tappa salvata ancora"
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Concetti che eserciti: expo-location, expo-camera, AsyncStorage, fetch (reverse geocoding), FlatList, permessi, stato condizionale.
